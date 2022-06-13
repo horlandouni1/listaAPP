@@ -47,6 +47,7 @@ const ListDetail = () => {
   useEffect(() => {
     getOne(idUser);
     console.log(user);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="container container-detail-user">
