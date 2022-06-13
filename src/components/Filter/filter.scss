@@ -1,0 +1,60 @@
+.container-filter {
+  position: sticky;
+}
+.filter-button {
+  margin: 12px;
+  position: relative;
+}
+.filter-button-menu1,
+.filter-button-menu2 {
+  position: absolute;
+  bottom: -210%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  z-index: 1;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 10%;
+  padding: 10px;
+  span {
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+}
+.button-calculate {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container-iconFilter-menu {
+  display: none;
+  position: relative;
+}
+.container-filter-menu {
+  position: absolute;
+  bottom: -480px;
+  left: 40px;
+  z-index: 1;
+  width: 162px;
+  background: rgb(244, 206, 206);
+  padding: 15px;
+}
+@media (max-width: 787px) {
+  .filter-button-menu1 {
+    bottom: -347%;
+  }
+  .result-calculate {
+    margin: 22px;
+  }
+}
+@media (max-width: 555px) {
+  .container-iconFilter-menu {
+    display: block;
+  }
+  .container-filter {
+    display: none;
+  }
+}

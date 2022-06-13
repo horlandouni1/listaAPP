@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { Login } from "./pages/Login";
+import { Home } from "./pages/Home";
+import AppContext from "./context/AppContext";
+import PrivateRoute from "./components/PrivateRoute";
+import useInitialState from "./hooks/useInitialState";
+import Layout from "./containers/Layout";
+import { List } from "./pages/List";
+import { Actualizar } from "./pages/Actualizar";
+import { ListDetail } from "./pages/ListDetail";
 function App() {
+  const initialState = useInitialState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider value={initialState}>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            {/* <Route exact path="/" element={<Home />} /> */}
+            <Route exact path="/" element={<PrivateRoute />}>
+              <Route exact path="/" element={<Home />} />
+            </Route>
+            <Route exact path="/" element={<PrivateRoute />}>
+              <Route exact path="/list" element={<List />} />
+            </Route>
+            <Route exact path="/" element={<PrivateRoute />}>
+              <Route
+                exact
+                path="/listDetail/:idUser"
+                element={<ListDetail />}
+              />
+            </Route>
+            <Route exact path="/" element={<PrivateRoute />}>
+              <Route
+                exact
+                path="/editarUser/:idUser"
+                element={<Actualizar />}
+              />
+            </Route>
+            <Route exact path="/login" element={<Login />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </AppContext.Provider>
   );
 }
 

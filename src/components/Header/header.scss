@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid var(--very-light-pink);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: darkkhaki;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.navbar-left ul,
+.navbar-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  box-sizing: border-box;
+}
+.navbar-left {
+  display: flex;
+  box-sizing: border-box;
+}
+.navbar-left ul {
+  margin-left: 12px;
+  box-sizing: border-box;
+}
+.navbar-left ul li span,
+.navbar-right ul li span {
+  text-decoration: none;
+
+  border-radius: 8px;
+  cursor: pointer;
+  height: 100%;
+  .link {
+    text-decoration: none;
+    border: 1px solid var(--white);
+    padding: 8px;
+    color: #401874;
+  }
+  box-sizing: border-box;
+}
+
+.navbar-email {
+  color: #401874;
+  font-size: 16px;
+  margin-right: 12px;
+  box-sizing: border-box;
+}
+
+.container-menu-logout {
+  position: relative;
+  right: 5%;
+  box-sizing: border-box;
+}
+.menu-close-login {
+  background: #198754;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  display: block;
+  left: 50%;
+  bottom: -84%;
+  padding: 0 12px;
+}
+.menu-close-login ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.menu-close-login ul li {
+  cursor: pointer;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+}
+.navbar-right {
+  span {
+    display: flex;
+  }
+  .logo-user {
+    color: #401874;
+    font-size: 25px;
+  }
+}
+a.active {
+  text-decoration: none;
+  color: rgb(244, 242, 249);
+  background-color: #886ff8;
+}
+.menu-icono-header {
+  display: none;
+}
+.container-icon-nav {
+  position: relative;
+  .menu-nav {
+    position: absolute;
+    bottom: -200%;
+    left: 25%;
+    ul {
+      display: flex;
+      flex-direction: column;
+      background: #198754;
+      z-index: 2;
+
+      border-radius: 10%;
+      padding: 10px;
+      height: auto;
+      li {
+        margin-bottom: 5px;
+        cursor: pointer;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .menu-icono-header {
+    display: block;
+    margin: 15px;
+    font-size: 25px;
+  }
+  .navbar-left ul {
+    display: none;
+  }
+  .navbar-email {
+    display: none;
+  }
+  .container-menu-logout span {
+    padding-right: 20px;
+  }
+  .menu-close-login {
+    left: -238%;
+    padding: 0 10px;
+  }
+}
